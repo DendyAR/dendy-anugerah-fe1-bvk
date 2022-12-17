@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import useCatsSearch from "../components/useCatsSearch";
 import Card from "../components/Card";
 
@@ -9,8 +9,6 @@ export default function Home() {
   const handleSearch = (e) => {
     setQuery(e.target.value);
   };
-
-  // console.log(cats, "cats");
 
 
   return (
@@ -54,7 +52,9 @@ export default function Home() {
         </div>
       </div>
       {/* component */}
+      
         <Card />
+     
     </div>
   );
 }
