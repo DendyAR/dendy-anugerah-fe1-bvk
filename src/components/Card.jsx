@@ -13,7 +13,7 @@ export default function Card() {
   const totalCount = 100;
   const PAGE_LIMIT = 10;
 
-  const getProductList = () => {
+  const getCatsList = () => {
     let pageNo = Math.ceil(cats.length / PAGE_LIMIT) + 1;
     const queryParam = "?page=" + pageNo + "&limit=" + PAGE_LIMIT;
     const finalUrl = api_uri + queryParam;
@@ -30,12 +30,12 @@ export default function Card() {
   };
 
   useEffect(() => {
-    getProductList();
+    getCatsList();
   },);
 
   const fetchData = () => {
     if(cats.length < totalCount) {
-        getProductList()
+        getCatsList()
     }
   }
 
