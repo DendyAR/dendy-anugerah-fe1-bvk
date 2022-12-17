@@ -1,6 +1,7 @@
 import React, {useState } from "react";
 import useCatsSearch from "../components/useCatsSearch";
 import Card from "../components/Card";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -9,6 +10,8 @@ export default function Home() {
   const handleSearch = (e) => {
     setQuery(e.target.value);
   };
+
+  // console.log(cats, "cats");
 
 
   return (
@@ -37,11 +40,13 @@ export default function Home() {
                 </div>
                 {cats.map((item, index) => (
                   <div key={index} className="py-3 text-sm">
+                    <a href={item.wikipedia_url} target="_blank" rel="noreferrer">
                     <div className="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
                       <span className="bg-gray-400 h-2 w-2 m-2 rounded-full" />
                       <div className="flex-grow font-medium px-2">{item.name}</div>
                       <div className="text-sm font-normal text-gray-500 tracking-wide">Origin: {item.origin}</div>
                     </div>
+                    </a>
                   </div>
                 ))}
               </div>
