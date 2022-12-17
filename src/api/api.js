@@ -1,0 +1,1 @@
+export const api_uri = `https://api.thecatapi.com/v1/breeds`
